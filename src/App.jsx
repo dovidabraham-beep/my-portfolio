@@ -208,7 +208,7 @@ export default function Portfolio() {
             src={ME.photo}
             alt={ME.name}
             style={{
-              width: 180, height: 180, objectFit: "cover",
+              width: 360, height: 360, objectFit: "cover",
               borderRadius: "50%", border: "4px solid rgba(124,58,237,0.6)",
             }}
           />
