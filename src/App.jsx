@@ -101,7 +101,7 @@ function ChatBubble({ msg }) {
 export default function Portfolio() {
   const scrollY = useScroll();
   const [msgs, setMsgs] = useState([
-    { role: "assistant", content: `Hey! I'm Alex's AI. Ask me anything — projects, skills, availability, whatever's on your mind.` },
+    { role: "assistant", content: `Hey! I'm David's AI. Ask me anything — projects, skills, availability, whatever's on your mind.` },
   ]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
@@ -321,7 +321,7 @@ export default function Portfolio() {
             }}>
               <textarea value={input} onChange={e => setInput(e.target.value)}
                 onKeyDown={e => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); send(); } }}
-                placeholder="Ask anything about Alex…" rows={1}
+                placeholder="Ask anything about David…" rows={1}
                 style={{
                   flex: 1, resize: "none", background: "rgba(255,255,255,0.05)",
                   border: "1px solid rgba(255,255,255,0.1)", borderRadius: 12,
