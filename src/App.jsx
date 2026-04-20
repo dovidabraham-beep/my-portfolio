@@ -1,8 +1,5 @@
 import { useState, useRef, useEffect } from "react";
 
-// ============================================================
-//  EDIT YOUR INFO HERE
-// ============================================================
 const ME = {
   photo: "/profile.png",
   name: "David Abraham",
@@ -13,12 +10,11 @@ const ME = {
   skills: [
     "Troubleshooting / Problem Solving", "Networking", "All things Windows",
     "Automation", "Artificial Intelligence", "Technical Writing", "Running", "Piloting small aircraft"
-    
   ],
   projects: [
     {
       title: "Date David Abraham",
-      tags: ["Comedy" , "Dating"],
+      tags: ["Comedy", "Dating"],
       desc: "A fun take on a dating profile, check it out, but don't take it too seriously.",
       color: "#7c3aed",
     },
@@ -30,8 +26,8 @@ const ME = {
     },
     {
       title: "Dave's AI Experiments",
-      tags: ["Motion", "Direction"],
-      desc: "A scollection of AI project/empiriments I'm working on.",
+      tags: ["AI", "Projects"],
+      desc: "A collection of AI projects and experiments I'm working on.",
       color: "#0891b2",
     },
   ],
@@ -41,13 +37,12 @@ Here is everything you know about David:
 - 6 x Marathon Runner.
 - Private pilot (single engine).
 - Based in Rochester, MI.
-- Notable projects: Date David abraham (fun dating profile), Dave Teaches Tech (Teaching others while he learns and experiments), Dave's AI Experiments (Compilation of Dave's AI projects and experiments).
+- Notable projects: Date David Abraham (fun dating profile), Dave Teaches Tech (Teaching others while he learns and experiments), Dave's AI Experiments (Compilation of Dave's AI projects and experiments).
 - Email: davidmabraham@icloud.com
-- Loves working with bleeding-edge technology and teching others as he learns.
+- Loves working with bleeding-edge technology and teaching others as he learns.
 - Available for freelance and consulting projects.
 Answer visitors' questions about David warmly and concisely. If you don't know something, say so honestly.`,
 };
-// ============================================================
 
 const NAV = ["About", "Skills", "Work", "Chat"];
 
@@ -79,10 +74,7 @@ function Tag({ label, color = "#7c3aed" }) {
 function ChatBubble({ msg }) {
   const isUser = msg.role === "user";
   return (
-    <div style={{
-      display: "flex", justifyContent: isUser ? "flex-end" : "flex-start",
-      marginBottom: 12,
-    }}>
+    <div style={{ display: "flex", justifyContent: isUser ? "flex-end" : "flex-start", marginBottom: 12 }}>
       {!isUser && (
         <div style={{
           width: 28, height: 28, borderRadius: "50%", background: "linear-gradient(135deg,#7c3aed,#db2777)",
@@ -123,7 +115,6 @@ export default function Portfolio() {
       const res = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        
         body: JSON.stringify({
           model: "claude-sonnet-4-5",
           max_tokens: 1000,
@@ -174,7 +165,6 @@ export default function Portfolio() {
         minHeight: "100vh", display: "flex", flexDirection: "column",
         justifyContent: "center", padding: "0 5%", position: "relative", overflow: "hidden",
       }}>
-        {/* bg blobs */}
         {[
           { top: "10%", left: "60%", bg: "radial-gradient(circle, rgba(124,58,237,0.35) 0%, transparent 70%)", size: 600 },
           { top: "50%", left: "20%", bg: "radial-gradient(circle, rgba(219,39,119,0.2) 0%, transparent 70%)", size: 400 },
@@ -209,26 +199,24 @@ export default function Portfolio() {
             }}>Ask Me Anything ✦</button>
           </div>
         </div>
-        <img
-         src={ME.photo}
-         alt={ME.name}
-         style={{
-         position: "absolute",
-         right: "5%",
-         top: "50%",
-         transform: "translateY(-50%)",
-          width: "clamp(200px, 25vw, 380px)",
-         height: "clamp(200px, 25vw, 380px)",
-         objectFit: "cover",
-         borderRadius: "50%",
-         border: "3px solid rgba(124,58,237,0.5)",
-         opacity: 0.9,
-         }}
-        />
       </section>
 
+      {/* PROFILE PHOTO */}
+      {ME.photo && (
+        <div style={{ display: "flex", justifyContent: "center", padding: "60px 5% 0" }}>
+          <img
+            src={ME.photo}
+            alt={ME.name}
+            style={{
+              width: 180, height: 180, objectFit: "cover",
+              borderRadius: "50%", border: "4px solid rgba(124,58,237,0.6)",
+            }}
+          />
+        </div>
+      )}
+
       {/* ABOUT */}
-      <section id="about" style={{ padding: "100px 5%", maxWidth: 900, margin: "0 auto" }}>
+      <section id="about" style={{ padding: "48px 5% 100px", maxWidth: 900, margin: "0 auto" }}>
         <p style={{ color: "#7c3aed", fontWeight: 700, letterSpacing: "0.12em", fontSize: 12, textTransform: "uppercase", marginBottom: 16 }}>About</p>
         <p style={{ fontSize: "clamp(1.2rem, 2.5vw, 1.6rem)", lineHeight: 1.65, color: "#e4e4e7", fontWeight: 400 }}>
           {ME.about}
@@ -247,8 +235,7 @@ export default function Portfolio() {
           <div style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
             {ME.skills.map((s, i) => {
               const colors = ["#7c3aed", "#db2777", "#0891b2", "#059669", "#d97706"];
-              const c = colors[i % colors.length];
-              return <Tag key={s} label={s} color={c} />;
+              return <Tag key={s} label={s} color={colors[i % colors.length]} />;
             })}
           </div>
         </div>
@@ -296,11 +283,7 @@ export default function Portfolio() {
           <p style={{ color: "#71717a", fontSize: 14, marginBottom: 28 }}>
             Powered by Claude — ask about skills, projects, availability, or anything else.
           </p>
-
-          <div style={{
-            background: "#111113", border: "1px solid rgba(255,255,255,0.08)",
-            borderRadius: 20, overflow: "hidden",
-          }}>
+          <div style={{ background: "#111113", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 20, overflow: "hidden" }}>
             <div style={{ padding: 20, maxHeight: 380, overflowY: "auto" }}>
               {msgs.map((m, i) => <ChatBubble key={i} msg={m} />)}
               {loading && (
@@ -318,12 +301,10 @@ export default function Portfolio() {
               )}
               <div ref={chatEndRef} />
             </div>
-
-            {/* Suggestions */}
             {msgs.length === 1 && (
               <div style={{ padding: "0 20px 16px", display: "flex", gap: 8, flexWrap: "wrap" }}>
-                {["What are your strongest skills?", "Are you available for hire?", "Tell me about your design process"].map(q => (
-                  <button key={q} onClick={() => { setInput(q); }}
+                {["What are your strongest skills?", "Are you available for hire?", "Tell me about your projects"].map(q => (
+                  <button key={q} onClick={() => setInput(q)}
                     style={{
                       fontSize: 12, padding: "6px 14px", borderRadius: 99, cursor: "pointer",
                       background: "transparent", border: "1px solid rgba(255,255,255,0.12)", color: "#a1a1aa",
@@ -331,11 +312,7 @@ export default function Portfolio() {
                 ))}
               </div>
             )}
-
-            <div style={{
-              display: "flex", gap: 10, padding: 16,
-              borderTop: "1px solid rgba(255,255,255,0.07)", alignItems: "flex-end",
-            }}>
+            <div style={{ display: "flex", gap: 10, padding: 16, borderTop: "1px solid rgba(255,255,255,0.07)", alignItems: "flex-end" }}>
               <textarea value={input} onChange={e => setInput(e.target.value)}
                 onKeyDown={e => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); send(); } }}
                 placeholder="Ask anything about David…" rows={1}
