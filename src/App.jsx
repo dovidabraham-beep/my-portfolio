@@ -16,7 +16,7 @@ const ME = {
   ],
   projects: [
     {
-      title: "Date David Abraham"
+      title: "Date David Abraham",
       tags: ["Comedy" , "Dating"],
       desc: "A fun take on a dating profile, check it out, but don't take it too seriously.",
       color: "#7c3aed",
