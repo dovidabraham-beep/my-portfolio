@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react";
 //  EDIT YOUR INFO HERE
 // ============================================================
 const ME = {
+  photo: "/profile.png",
   name: "David Abraham",
   tagline: "Father. IT Engineer. AI Tester.",
   about: "Twenty plus years in IT. Two kids who keep me on my toes. And a front-row seat to the AI revolution. Building things, breaking things (frequently), and teaching everyone I can along the way.",
@@ -208,6 +209,22 @@ export default function Portfolio() {
             }}>Ask Me Anything ✦</button>
           </div>
         </div>
+        <img
+         src={ME.photo}
+         alt={ME.name}
+         style={{
+         position: "absolute",
+         right: "5%",
+         top: "50%",
+         transform: "translateY(-50%)",
+          width: "clamp(200px, 25vw, 380px)",
+         height: "clamp(200px, 25vw, 380px)",
+         objectFit: "cover",
+         borderRadius: "50%",
+         border: "3px solid rgba(124,58,237,0.5)",
+         opacity: 0.9,
+         }}
+        />
       </section>
 
       {/* ABOUT */}
