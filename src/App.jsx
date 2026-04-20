@@ -6,8 +6,7 @@ import { useState, useRef, useEffect } from "react";
 const ME = {
   name: "David Abraham",
   tagline: "Father. IT Engineer. AI Tester.",
-  about:
-    "Twenty plus years in IT. Two kids who keep me on my toes. And a front-row seat to the AI revolution. Building things, breaking things (frequently), and teaching everyone I can along the way."
+  about: "Twenty plus years in IT. Two kids who keep me on my toes. And a front-row seat to the AI revolution. Building things, breaking things (frequently), and teaching everyone I can along the way.",
   email: "alex@example.com",
   location: "San Francisco, CA",
   skills: [
