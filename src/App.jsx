@@ -203,7 +203,7 @@ export default function Portfolio() {
 
       {/* PROFILE PHOTO */}
       {ME.photo && (
-        <div style={{ display: "flex", justifyContent: "center", padding: "16px 5% 0" }}>
+        <div style={{ display: "flex", justifyContent: "center", padding: "5px 5% 0" }}>
           <img
             src={ME.photo}
             alt={ME.name}
