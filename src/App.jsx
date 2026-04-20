@@ -4,52 +4,46 @@ import { useState, useRef, useEffect } from "react";
 //  EDIT YOUR INFO HERE
 // ============================================================
 const ME = {
-  name: "Alex Rivera",
-  tagline: "Designer. Developer. Storyteller.",
+  name: "David Abraham",
+  tagline: "Father. IT Engineer. AI Tester.",
   about:
-    "I'm a multi-disciplinary creative who blends design thinking, code, and narrative to build experiences that actually mean something. I've worked across branding, product, and interactive media — always chasing that sweet spot where form meets function.",
+    "Twenty plus years in IT. Two kids who keep me on my toes. And a front-row seat to the AI revolution. Building things, breaking things (frequently), and teaching everyone I can along the way."
   email: "alex@example.com",
   location: "San Francisco, CA",
   skills: [
-    "Brand Identity", "UI/UX Design", "Motion Design",
-    "React & TypeScript", "Creative Direction", "Copywriting",
-    "Photography", "3D / Blender", "Strategy & Consulting",
+    "Troubleshooting / Problem Solving", "Networking", "All things Windows",
+    "Automation", "Artificial Intelligence", "Technical Writing", "Running", "Piloting small aircraft"
+    
   ],
   projects: [
     {
-      title: "Luminary App",
-      tags: ["Product Design", "React"],
-      desc: "A meditation and focus app — designed the full design system and built the onboarding experience from scratch.",
+      title: "Date David Abraham"
+      tags: ["Comedy" , "Dating"],
+      desc: "A fun take on a dating profile, check it out, but don't take it too seriously.",
       color: "#7c3aed",
     },
     {
-      title: "Verve Magazine",
-      tags: ["Brand Identity", "Print"],
-      desc: "Complete visual identity for an indie culture magazine, including logo, type system, and editorial templates.",
+      title: "Dave Teaches Tech",
+      tags: ["IT", "Teaching"],
+      desc: "My attempt to learn by teaching. Random topics, whatever comes up IRL.",
       color: "#db2777",
     },
     {
-      title: "Kinetic Shorts",
+      title: "Dave's AI Experiments",
       tags: ["Motion", "Direction"],
-      desc: "A series of 60-second motion films exploring urban texture and sound design.",
+      desc: "A scollection of AI project/empiriments I'm working on.",
       color: "#0891b2",
     },
-    {
-      title: "Roots Platform",
-      tags: ["UX Research", "Strategy"],
-      desc: "End-to-end redesign of a genealogy research tool, cutting task completion time by 40%.",
-      color: "#059669",
-    },
   ],
-  chat_context: `You are an AI assistant embedded in Alex Rivera's portfolio site.
-Here is everything you know about Alex:
-- Full-stack creative: brand identity, UI/UX, motion design, React/TypeScript, copywriting, photography, 3D (Blender), strategy.
-- Based in San Francisco, CA.
-- Notable projects: Luminary App (meditation/focus, full design system + React onboarding), Verve Magazine (indie culture brand identity), Kinetic Shorts (motion film series), Roots Platform (UX redesign, 40% task time reduction).
-- Email: alex@example.com
-- Loves working at the intersection of design and technology.
-- Available for freelance and full-time roles.
-Answer visitors' questions about Alex warmly and concisely. If you don't know something, say so honestly.`,
+  chat_context: `You are an AI assistant embedded in David Abraham's portfolio site.
+Here is everything you know about David:
+- Single Dad to two kids, one 12 year old boy and a 5 year old princess. 20+ years experience in IT engineering. Expert on Windows Servers, TCP/IP Networking, Troubleshooting and Artificial Intelligence. 
+- Based in Rochester, MI.
+- Notable projects: Date David abraham (fun dating profile), Dave Teaches Tech (Teaching others while he learns and experiments), Dave's AI Experiments (Compilation of Dave's AI projects and experiments).
+- Email: davidmabraham@icloud.com
+- Loves working with bleeding-edge technology and teching others as he learns.
+- Available for freelance and consulting projects.
+Answer visitors' questions about David warmly and concisely. If you don't know something, say so honestly.`,
 };
 // ============================================================
 
