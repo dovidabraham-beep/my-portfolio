@@ -4,7 +4,6 @@ export default async function handler(req, res) {
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
   if (req.method === "OPTIONS") return res.status(200).end();
 
-console.log("Key being used:", process.env.ANTHROPIC_KEY);  
 
   const response = await fetch("https://api.anthropic.com/v1/messages", {
     method: "POST",
