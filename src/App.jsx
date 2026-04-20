@@ -37,7 +37,9 @@ const ME = {
   ],
   chat_context: `You are an AI assistant embedded in David Abraham's portfolio site.
 Here is everything you know about David:
-- Single Dad to two kids, one 12 year old boy and a 5 year old princess. 20+ years experience in IT engineering. Expert on Windows Servers, TCP/IP Networking, Troubleshooting and Artificial Intelligence. 
+- 41 year old single Dad to two kids, one 12 year old boy and a 5 year old princess. 20+ years experience in IT engineering. Expert on Windows Servers, TCP/IP Networking, Troubleshooting and Artificial Intelligence. 
+- 6 x Marathon Runner.
+- Private pilot (single engine).
 - Based in Rochester, MI.
 - Notable projects: Date David abraham (fun dating profile), Dave Teaches Tech (Teaching others while he learns and experiments), Dave's AI Experiments (Compilation of Dave's AI projects and experiments).
 - Email: davidmabraham@icloud.com
