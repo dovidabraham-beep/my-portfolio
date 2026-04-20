@@ -162,8 +162,8 @@ export default function Portfolio() {
 
       {/* HERO */}
       <section style={{
-        minHeight: "100vh", display: "flex", flexDirection: "column",
-        justifyContent: "center", padding: "0 5%", position: "relative", overflow: "hidden",
+        display: "flex", flexDirection: "column",
+        justifyContent: "center", padding: "120px 5% 0", position: "relative", overflow: "hidden",
       }}>
         {[
           { top: "10%", left: "60%", bg: "radial-gradient(circle, rgba(124,58,237,0.35) 0%, transparent 70%)", size: 600 },
@@ -203,7 +203,7 @@ export default function Portfolio() {
 
       {/* PROFILE PHOTO */}
       {ME.photo && (
-        <div style={{ display: "flex", justifyContent: "center", padding: "5px 5% 0" }}>
+        <div style={{ display: "flex", justifyContent: "center", padding: "48px 5% 0" }}>
           <img
             src={ME.photo}
             alt={ME.name}
