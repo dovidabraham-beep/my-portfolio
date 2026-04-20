@@ -5,7 +5,7 @@ export default async function handler(req, res) {
   if (req.method === "OPTIONS") return res.status(200).end();
 
   const { key, ...body } = req.body;
-
+  console.log("Key value:", key);
   console.log("Key received:", key ? "yes" : "no");
   console.log("Body:", JSON.stringify(body));
 
