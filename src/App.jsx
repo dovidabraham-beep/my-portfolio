@@ -124,15 +124,12 @@ export default function Portfolio() {
     setInput("");
     setLoading(true);
     try {
-      const res = await fetch("https://api.anthropic.com/v1/messages", {
+      const res = await fetch("/api/chat", {
         method: "POST",
-        hheaders: {
-  "Content-Type": "application/json",
-  "x-api-key": import.meta.env.VITE_ANTHROPIC_KEY,
-  "anthropic-version": "2023-06-01",
-},
+        headers: { "Content-Type": "application/json" },
+        
         body: JSON.stringify({
-          model: "claude-sonnet-4-20250514",
+          model: "claude-sonnet-4-5",
           max_tokens: 1000,
           system: ME.chat_context,
           messages: next.map(m => ({ role: m.role, content: m.content })),
